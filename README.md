@@ -2,6 +2,7 @@
 “MLB Moneyball BI – Run Environment, Payroll &amp; Value Hunter”
 
 ## Repo Structure
+```plaintext
 mlb-flagship-run-environment-value-hunter/
 ├─ README.md
 ├─ powerbi/
@@ -19,4 +20,5 @@ mlb-flagship-run-environment-value-hunter/
    ├─ page1_league_run_env.png
    ├─ page2_payroll_vs_wins.png
    └─ page3_value_hunter.png
+```
 
