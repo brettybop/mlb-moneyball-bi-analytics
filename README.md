@@ -194,22 +194,16 @@ Questions:
 
    ```sql
    CREATE DATABASE mlb_flagship;
-   
+
 2. **Create schemas and raw tables**
 
 In the mlb_flagship database:
-
-Create schemas: raw_lahman, stg, dm_macro.
-
-Create raw tables for at least:
-
-raw_lahman.teams_raw
-
-raw_lahman.batting_raw
-
-raw_lahman.salaries_raw
-
-(See the SQL files in the sql/ folder for table definitions.)
+- Create schemas: raw_lahman, stg, dm_macro.
+- Create raw tables for at least:
+   - raw_lahman.teams_raw
+   - raw_lahman.batting_raw
+   - raw_lahman.salaries_raw
+See the SQL files in the sql/ folder for table definitions.
 
 Download Lahman / Baseball Databank CSVs
 
@@ -223,9 +217,9 @@ Use either:
 
 COPY statements from psql, or
 
-The pgAdmin “Import/Export” tool
+The pgAdmin Import/Export tool
 
-to load:
+To load:
 
 Teams → raw_lahman.teams_raw
 
@@ -237,9 +231,21 @@ Create staging views and data mart objects
 
 Run the SQL scripts in the sql/ folder (in order) to:
 
-Clean and type raw data into staging views (stg.v_teams, stg.v_batting_py_team_metrics, stg.v_salaries, …).
+Clean and type raw data into staging views:
 
-Populate dimension tables (dm_macro.dim_season, dm_macro.dim_league).
+stg.v_teams
+
+stg.v_batting_py_team_metrics
+
+stg.v_salaries
+
+(and any other views defined in the scripts)
+
+Populate dimension tables:
+
+dm_macro.dim_season
+
+dm_macro.dim_league
 
 Build fact tables and views:
 
@@ -255,7 +261,8 @@ Open the Power BI report
 
 Open powerbi/mlb_moneyball_dashboard.pbix (or the PBIX file included in this repo).
 
-Update the PostgreSQL server and database connection if needed (Transform Data → Data source settings).
+Update the PostgreSQL server and database connection if needed
+(Transform Data → Data source settings).
 
 Set relationships and Date table (if needed)
 
