@@ -203,41 +203,35 @@ In the mlb_flagship database:
    - raw_lahman.teams_raw
    - raw_lahman.batting_raw
    - raw_lahman.salaries_raw
-See the SQL files in the ```plaintext sql/``` folder for table definitions.
+See the SQL files in the ```sql/``` folder for table definitions.
 
-Download Lahman / Baseball Databank CSVs
+3. **Download Lahman / Baseball Databank CSVs**
 
-Download the Teams, Batting, and Salaries CSVs from the Baseball Databank / Lahman Kaggle dataset.
+- Download the Teams, Batting, and Salaries CSVs from the Baseball Databank / Lahman Kaggle dataset.
+- Place them in a local data/ or data/raw/ folder (your choice).
 
-Place them in a local data/ or data/raw/ folder (your choice).
-
-Load raw data into PostgreSQL
+4. **Load raw data into PostgreSQL**
 
 Use either:
 
-COPY statements from psql, or
+- ```COPY``` statements from psql, or
 
-The pgAdmin Import/Export tool
+- The pgAdmin Import/Export tool
 
 To load:
 
-Teams → raw_lahman.teams_raw
+- Teams → raw_lahman.teams_raw
+- Batting → raw_lahman.batting_raw
+- Salaries → raw_lahman.salaries_raw
 
-Batting → raw_lahman.batting_raw
+5. **Create staging views and data mart objects**
 
-Salaries → raw_lahman.salaries_raw
+Run the SQL scripts in the ```sql/``` folder (in order) to:
 
-Create staging views and data mart objects
-
-Run the SQL scripts in the sql/ folder (in order) to:
-
-Clean and type raw data into staging views:
-
-stg.v_teams
-
-stg.v_batting_py_team_metrics
-
-stg.v_salaries
+- Clean and type raw data into staging views:
+   - ```stg.v_teams```
+   - ```stg.v_batting_py_team_metrics```
+   - ```stg.v_salaries```
 
 (and any other views defined in the scripts)
 
