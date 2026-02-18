@@ -232,51 +232,35 @@ Run the SQL scripts in the ```sql/``` folder (in order) to:
    - ```stg.v_teams```
    - ```stg.v_batting_py_team_metrics```
    - ```stg.v_salaries```
+   - (and any other views defined in the scripts)
+- Populate dimension tables:
+   - ```dm_macro.dim_season```
+   - ```dm_macro.dim_league```
+- Build fact tables and views:
+   - ```dm_macro.league_season_kpi_simple```
+   - ```dm_macro.v_team_payroll_perf```
+   - ```dm_macro.v_value_hunters_base```
+   - ```dm_macro.v_dim_season_date```
 
-(and any other views defined in the scripts)
+6. **Open the Power BI report**
 
-Populate dimension tables:
+- Open powerbi/mlb_moneyball_dashboard.pbix (or the PBIX file included in this repo).
+- Update the PostgreSQL server and database connection if needed (Transform Data → Data source settings).
 
-dm_macro.dim_season
-
-dm_macro.dim_league
-
-Build fact tables and views:
-
-dm_macro.league_season_kpi_simple
-
-dm_macro.v_team_payroll_perf
-
-dm_macro.v_value_hunters_base
-
-dm_macro.v_dim_season_date
-
-Open the Power BI report
-
-Open powerbi/mlb_moneyball_dashboard.pbix (or the PBIX file included in this repo).
-
-Update the PostgreSQL server and database connection if needed
-(Transform Data → Data source settings).
-
-Set relationships and Date table (if needed)
+7. **Set relationships and Date table (if needed)**
 
 In Power BI:
 
-Confirm v_dim_season_date[season_date] is marked as the Date table.
+- Confirm v_dim_season_date[season_date] is marked as the Date table.
+- Confirm relationships:
+   - ```v_dim_season_date[season] → league_season_kpi_simple[season]```
+   - ```v_dim_season_date[season] → v_team_payroll_perf[season]```
+   - ```v_dim_season_date[season] → v_value_hunters_base[yearid]```
 
-Confirm relationships:
+8. **Refresh the model**
 
-v_dim_season_date[season] → league_season_kpi_simple[season]
-
-v_dim_season_date[season] → v_team_payroll_perf[season]
-
-v_dim_season_date[season] → v_value_hunters_base[yearid]
-
-Refresh the model
-
-In Power BI Desktop, click Refresh.
-
-All three report pages should now populate with data.
+- In Power BI Desktop, click Refresh.
+- All three report pages should now populate with data.
 
 ```plaintext
 mlb-moneyball-bi/
