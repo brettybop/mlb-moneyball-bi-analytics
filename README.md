@@ -203,7 +203,7 @@ In the mlb_flagship database:
    - raw_lahman.teams_raw
    - raw_lahman.batting_raw
    - raw_lahman.salaries_raw
-See the SQL files in the sql/ folder for table definitions.
+See the SQL files in the ```plaintext sql/``` folder for table definitions.
 
 Download Lahman / Baseball Databank CSVs
 
