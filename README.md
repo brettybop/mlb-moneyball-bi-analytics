@@ -27,7 +27,7 @@ Key tables used:
 - `Batting` – player-season batting stats
 - `Salaries` – player salaries by team and season
 
-The raw CSVs are not included in this repo; users can download them directly from Kaggle / Lahman and run the SQL scripts to reproduce the model.
+The raw CSVs are contained within the `/data` folder.
 
 ---
 
@@ -35,9 +35,19 @@ The raw CSVs are not included in this repo; users can download them directly fro
 
 - **Database:** PostgreSQL  
   - Schemas: `raw_lahman`, `stg`, `dm_macro`  
-  - Features used: CTEs, window functions, `STDDEV_SAMP`, `corr`, views
+  - Features used:
+       - CTEs
+       - window functions
+       - `DENSE_RANK`
+       - `LAG`
+       - rolling 5-year averages
+       - `STDDEV_SAMP`
+       - `corr`
+       - typed views and materialized fact tables
 - **BI Tool:** Power BI Desktop  
-  - Star schema modeling, relationships, time intelligence  
+  - Star schema modeling
+  - relationships
+  - time intelligence  
   - DAX measures for KPIs and value scoring
 - **Language:** SQL + DAX
 
