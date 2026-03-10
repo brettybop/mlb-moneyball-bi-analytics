@@ -15,11 +15,20 @@ It answers three layers of questions:
 
 The stack and patterns (star schema, staging, DAX measures, relationship design) are meant to mirror real data analyst / analytics engineer work.
 
+This report is backed by a local PostgreSQL warehouse; refresh is demonstrated locally and published as a portfolio artifact
+
+```
+https://app.powerbi.com/groups/me/apps/bdb842e0-a8c8-49f2-843c-9236c1626d39/reports/a70a7bc7-3d6b-4136-97e0-7c219e8853ed/72e15dc1813327fa6d42?experience=power-bi
+```
 ---
 
 ## Data Source
 
 The project uses the open **Baseball Databank (Lahman)** dataset (via the Kaggle “Baseball Databank” mirror).
+
+```
+https://www.kaggle.com/datasets/open-source-sports/baseball-databank
+```
 
 Key tables used:
 
