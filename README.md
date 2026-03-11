@@ -28,7 +28,7 @@ https://app.powerbi.com/groups/me/apps/bdb842e0-a8c8-49f2-843c-9236c1626d39/repo
 
 ## Data Source
 
-The project uses the open **Baseball Databank (Lahman)** dataset (via the Kaggle “Baseball Databank” mirror).
+We use the open **Baseball Databank (Lahman)** dataset (via the Kaggle “Baseball Databank” mirror).
 
 ```
 https://www.kaggle.com/datasets/open-source-sports/baseball-databank
