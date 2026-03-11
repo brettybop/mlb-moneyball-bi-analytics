@@ -67,27 +67,36 @@ The raw CSVs are contained within the `/data` folder.
 ### Schemas
 
 - **`raw_lahman`**  
-  Landing tables for CSV imports (`teams_raw`, `batting_raw`, `salaries_raw`).
+  Raw CSV Landing + typed raw tables (`teams_raw`;`teams_raw_text`, `batting_raw`;`batting_raw_text`, `salaries_raw`;`salaries_raw_text`).
 
 - **`stg` (staging)**  
   Cleaned / typed views, e.g.:
-  - `stg.v_teams` – typed team-season stats
-  - `stg.v_batting_py_team_metrics` – player-year batting metrics by team
-  - `stg.v_salaries` – salaries aligned on `playerid`, `yearid`, `teamid`
+  - `stg.v_teams`
+  - `stg.v_salaries`
+  - `stg.v_batting`
+  - `stg.v_batting_py_team_metrics`
+  - `stg.v_batting_py_team` 
 
 - **`dm_macro` (data mart)**  
-  Dimensional model for analytics:
+  Dimensions:
   - `dm_macro.dim_season` – seasons
   - `dm_macro.dim_league` – AL / NL / MLB
+  Fact tables:
+  - `dm_macro.fact_team_season`
   - `dm_macro.league_season_kpi_simple` – macro KPIs by league/season
   - `dm_macro.v_team_payroll_perf` – team-season performance vs payroll
+  Views:
   - `dm_macro.v_value_hunters_base` – player-season batting + salary for value analysis  
   - `dm_macro.v_dim_season_date` – season → mid-year date for time intelligence
+  - `dm_macro.v_team_payroll_perf`
+  - `dm_macro.v_mlb_trend`
+  - `dm_macro.v_value_hunters_pyteam
 
 In Power BI, `v_dim_season_date[season_date]` is marked as the **Date table**, with relationships:
 
-- `v_dim_season_date[season]` → league and team fact tables
-- `v_dim_season_date[season]` → value hunter base `[yearid]`
+- `v_dim_season_date[season]` → `league_season_kpi_simple[season]`
+- `v_dim_season_date[season]` → `v_team_payroll_perf[season]`
+- `v_dim_season_date[season]` → `v_value_hunters_base[yearid]`
 
 This enables DAX time functions and consistent season filtering.
 
@@ -102,8 +111,9 @@ This enables DAX time functions and consistent season filtering.
 Questions:
 
 - **Is scoring up or down over time?**  
-  - Runs per game (R/G) by season  
-  - Year-over-year change and 5-year moving average
+  - Runs per game (R/G) by season
+  - Year-over-year change
+  - 5-year moving average
 
 - **Is on-base ability changing?**  
   - OBP (simple) by season  
@@ -287,12 +297,17 @@ mlb-moneyball-bi/
 ├─ powerbi/
 │  └─ mlb_moneyball_dashboard.pbix
 ├─ sql/
-│  ├─ 01_create_schemas_and_raw_tables.sql
-│  ├─ 02_load_lahman_teams_batting_salaries.sql
-│  ├─ 03_stg_views.sql
-│  ├─ 04_dm_macro_league_kpis.sql
-│  ├─ 05_team_payroll_perf.sql
-│  └─ 06_value_hunters_base.sql
+│  ├─ 00__README_run_order.md
+│  ├─ 01__schemas.sql
+│  ├─ 02__raw_tables.sql
+│  ├─ 03__load_raw_text_and_promote.sql
+│  ├─ 04__stg_views.sql
+│  ├─ 05__dm_dims.sql
+│  ├─ 06__dm_facts_team_season_and_payroll.sql
+│  ├─ 07__dm_league_season_kpis.sql
+│  ├─ 08__dm_views_trends_and_payroll_perf.sql
+│  ├─ 09__dm_value_hunter_views.sql
+│  └─ 99__sanity_checks.sql
 ├─ data/
 │  └─ (optional notes or sample files – raw Lahman CSVs not committed)
 └─ images/
