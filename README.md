@@ -225,71 +225,74 @@ Questions:
    CREATE DATABASE mlb_flagship;
 
 2. **Create schemas and raw tables**
+Run:
+- `01__schemas.sql`
+- `02__raw_tables.sql`
 
-In the mlb_flagship database:
-- Create schemas: raw_lahman, stg, dm_macro.
-- Create raw tables for at least:
-   - raw_lahman.teams_raw
-   - raw_lahman.batting_raw
-   - raw_lahman.salaries_raw
-See the SQL files in the ```sql/``` folder for table definitions.
+This creates:
+- raw_lahman
+- stg
+- dm_macro
 
 3. **Download Lahman / Baseball Databank CSVs**
+Download the Teams, Batting, and Salaries CSVs from the Baseball Databank / Lahman Kaggle dataset.
+Place them in a local data/ or data/raw/ folder.
 
-- Download the Teams, Batting, and Salaries CSVs from the Baseball Databank / Lahman Kaggle dataset.
-- Place them in a local data/ or data/raw/ folder (your choice).
-
-4. **Load raw data into PostgreSQL**
-
+4. **Load raw CSVs into the `*_raw_text` tables**
 Use either:
+- `COPY` statements from psql, or
+- the pgAdmin *Import/Export* tool
 
-- ```COPY``` statements from psql, or
+Load the CSVs into:
+- `raw_lahman.teams_raw_text`
+- `raw_lahman.batting_raw_text`
+- `raw_lahman.salaries_raw_text`
 
-- The pgAdmin Import/Export tool
+5. **Promote raw text to typed raw tables**
+Run:
+- `03__load_raw_text_and_promote.sql`
 
-To load:
+This script:
+- removes accidental header rows
+- trims whitespace
+- converts blank strings to NULL
+- and casts text into typed raw tables
 
-- Teams → raw_lahman.teams_raw
-- Batting → raw_lahman.batting_raw
-- Salaries → raw_lahman.salaries_raw
+6. **Build the staging layer**
+Run:
+- `04__stg_views.sql`
 
-5. **Create staging views and data mart objects**
+7. **Build the dimensional mart**
+Run:
+- `05__dm_dims.sql`
+- `06__dm_facts_team_season_and_payroll.sql`
+- `07__dm_league_season_kpis.sql`
+- `08__dm_views_trends_and_payroll_perf.sql`
+- `09__dm_value_hunter_views.sql`
 
-Run the SQL scripts in the ```sql/``` folder (in order) to:
+8. **Run validation checks**
+Optionally run:
+- `99__sanity_checks.sql`
 
-- Clean and type raw data into staging views:
-   - ```stg.v_teams```
-   - ```stg.v_batting_py_team_metrics```
-   - ```stg.v_salaries```
-   - (and any other views defined in the scripts)
-- Populate dimension tables:
-   - ```dm_macro.dim_season```
-   - ```dm_macro.dim_league```
-- Build fact tables and views:
-   - ```dm_macro.league_season_kpi_simple```
-   - ```dm_macro.v_team_payroll_perf```
-   - ```dm_macro.v_value_hunters_base```
-   - ```dm_macro.v_dim_season_date```
+9. **Open the Power BI report**
+- Open powerbi/mlb_moneyball_dashboard.pbix
+- Update PostgreSQL server/database connection if needed:
+   - Transform Data → Data source settings
 
-6. **Open the Power BI report**
-
-- Open powerbi/mlb_moneyball_dashboard.pbix (or the PBIX file included in this repo).
-- Update the PostgreSQL server and database connection if needed (Transform Data → Data source settings).
-
-7. **Set relationships and Date table (if needed)**
+10. **Set relationships and Date table**
 
 In Power BI:
-
-- Confirm v_dim_season_date[season_date] is marked as the Date table.
+- Mark v_dim_season_date[season_date] as the Date table
 - Confirm relationships:
-   - ```v_dim_season_date[season] → league_season_kpi_simple[season]```
-   - ```v_dim_season_date[season] → v_team_payroll_perf[season]```
-   - ```v_dim_season_date[season] → v_value_hunters_base[yearid]```
+   - v_dim_season_date[season] → league_season_kpi_simple[season]
+   - v_dim_season_date[season] → v_team_payroll_perf[season]
+   - v_dim_season_date[season] → v_value_hunters_base[yearid]
 
-8. **Refresh the model**
+11. **Refresh the model**
+- Click Refresh in Power BI Desktop
+- All report pages should populate with data
 
-- In Power BI Desktop, click Refresh.
-- All three report pages should now populate with data.
+## Repository Structure
 
 ```plaintext
 mlb-moneyball-bi/
