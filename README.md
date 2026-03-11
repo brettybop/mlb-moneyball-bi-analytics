@@ -6,7 +6,7 @@ Specifically we look at a bunch of baseball data from the Lahman Baseball Databa
 
 Baseball has been around a long time and there is a bunch of great data we can analyze. Let's dig in!
 
-It answers three layers of questions:
+This project answers three layers of questions:
 
 1. **League-level run environment:**  
    How has scoring, on-base ability, and pitcher dominance changed over time?
