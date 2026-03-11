@@ -2,7 +2,9 @@
 
 This project is my **flagship baseball analytics dashboard** built with **PostgreSQL** and **Power BI**. 
 
-Specifically we look at a bunch of baseball data from the Lahman Baseball Databank ranging back to the late 1800's. Baseball has been around a long time and there is a bunch of great data we can analyze. Let's dig in!
+Specifically we look at a bunch of baseball data from the Lahman Baseball Databank ranging back to the late 1800's. 
+
+Baseball has been around a long time and there is a bunch of great data we can analyze. Let's dig in!
 
 It answers three layers of questions:
 
