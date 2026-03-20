@@ -22,7 +22,7 @@ The stack and patterns (star schema, staging, DAX measures, relationship design)
 This report is backed by a local PostgreSQL warehouse; refresh is demonstrated locally and published as a portfolio artifact
 
 ```
-https://app.powerbi.com/groups/me/apps/bdb842e0-a8c8-49f2-843c-9236c1626d39/reports/a70a7bc7-3d6b-4136-97e0-7c219e8853ed/72e15dc1813327fa6d42?experience=power-bi
+https://app.powerbi.com/view?r=eyJrIjoiYjIyMWJlYjUtNjJmNi00MDdmLTkwOTQtYjkwNDczYmNjMDMyIiwidCI6IjJhMDkyZDhmLTNjNDktNDkwMy05ZTA2LThhNjU4MzY1YWI1OCIsImMiOjZ9&embedImagePlaceholder=true
 ```
 ---
 
