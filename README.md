@@ -1,4 +1,4 @@
-# ⚾ MLB Run Environment & Value Hunter Analytics (Power BI + PostgreSQL) ⚾
+# ⚾ MLB Run Environment & Value Hunter Analytics (Power BI + PostgreSQL)
 
 This project is my **flagship baseball analytics dashboard** built with **PostgreSQL** and **Power BI**. 
 
@@ -6,6 +6,7 @@ Specifically we look at a bunch of baseball data from the Lahman Baseball Databa
 
 Baseball has been around a long time and there is a bunch of great data we can analyze. Let's dig in!
 
+## 🎯 Project Objective
 This project answers three layers of questions:
 
 1. **League-level run environment:**  
@@ -23,7 +24,7 @@ https://app.powerbi.com/view?r=eyJrIjoiYjIyMWJlYjUtNjJmNi00MDdmLTkwOTQtYjkwNDczY
 ```
 ---
 
-## Data Source
+## 📊 Data Source
 
 We use the open **Baseball Databank (Lahman)** dataset (via the Kaggle “Baseball Databank” mirror).
 
@@ -63,7 +64,7 @@ The raw CSVs are contained within the `/data` folder.
 
 ---
 
-## Data Modeling Overview
+## 🧱 Data Modeling Overview
 
 ### Schemas
 
@@ -293,7 +294,7 @@ In Power BI:
 - Click Refresh in Power BI Desktop
 - All report pages should populate with data
 
-## Repository Structure
+## 📁 Repository Structure
 
 ```plaintext
 mlb-moneyball-bi/
