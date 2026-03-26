@@ -316,9 +316,5 @@ mlb-moneyball-bi/
 │  ├─ 09__dm_value_hunter_views.sql
 │  └─ 99__sanity_checks.sql
 ├─ data/
-│  └─ (optional notes or sample files – raw Lahman CSVs not committed)
-└─ images/
-   ├─ page1_league_run_environment.png
-   ├─ page2_team_payroll_vs_wins.png
-   └─ page3_value_hunter.png
+│  └─ (raw Lahman CSVs)
 ```
