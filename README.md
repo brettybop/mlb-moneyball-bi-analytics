@@ -17,10 +17,7 @@ This project answers three layers of questions:
 3. **Player-level “Value Hunter”:**  
    Which hitters deliver the most production for the least salary in a given season?
 
-The stack and patterns (star schema, staging, DAX measures, relationship design) are meant to mirror real data analyst / analytics engineer work.
-
-This report is backed by a local PostgreSQL warehouse; refresh is demonstrated locally and published as a portfolio artifact
-
+This report is backed by a local PostgreSQL warehouse; refresh is demonstrated locally and published as a portfolio artifact:
 ```
 https://app.powerbi.com/view?r=eyJrIjoiYjIyMWJlYjUtNjJmNi00MDdmLTkwOTQtYjkwNDczYmNjMDMyIiwidCI6IjJhMDkyZDhmLTNjNDktNDkwMy05ZTA2LThhNjU4MzY1YWI1OCIsImMiOjZ9&embedImagePlaceholder=true
 ```
