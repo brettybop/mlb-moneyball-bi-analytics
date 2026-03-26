@@ -104,7 +104,7 @@ This enables DAX time functions and consistent season filtering.
 
 ---
 
-## Power BI Pages & Questions Answered
+## 🗐 Power BI Pages & Questions Answered
 
 ### 📄 Page 1 – League Run Environment & Eras
 
