@@ -1,4 +1,4 @@
-# MLB Run Environment & Value Hunter Analytics (Power BI + PostgreSQL)
+# ⚾ MLB Run Environment & Value Hunter Analytics (Power BI + PostgreSQL) ⚾
 
 This project is my **flagship baseball analytics dashboard** built with **PostgreSQL** and **Power BI**. 
 
