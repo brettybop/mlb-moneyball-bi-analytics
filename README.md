@@ -1,6 +1,6 @@
 # ⚾ MLB Run Environment & Value Hunter Analytics (Power BI + PostgreSQL)
 
-This project is my **flagship baseball analytics dashboard** built with **PostgreSQL** and **Power BI**. 
+This project is my **flagship baseball analytics dashboard** built with **PostgreSQL** and **Power BI**. This report is backed by a local PostgreSQL warehouse; refresh is demonstrated locally and published as a portfolio artifact.
 
 Specifically we look at a bunch of baseball data from the Lahman Baseball Databank ranging back to the late 1800's. 
 
@@ -17,8 +17,6 @@ This project answers three layers of questions:
 
 3. **Player-level “Value Hunter”:**  
    Which hitters deliver the most production for the least salary in a given season?
-
-This report is backed by a local PostgreSQL warehouse; refresh is demonstrated locally and published as a portfolio artifact:
 
 **VISIT LINK BELOW TO VISIT PUBLIC VERSION OF THE DASHBOARD**
 ```
