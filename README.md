@@ -315,4 +315,7 @@ mlb-moneyball-bi/
 │  └─ 99__sanity_checks.sql
 ├─ data/
 │  └─ (raw Lahman CSVs)
+└─ images/
+   ├─ model_view_BI
+   └─ extras
 ```
