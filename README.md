@@ -19,6 +19,8 @@ This project answers three layers of questions:
    Which hitters deliver the most production for the least salary in a given season?
 
 This report is backed by a local PostgreSQL warehouse; refresh is demonstrated locally and published as a portfolio artifact:
+
+**VISIT LINK BELOW TO VISIT PUBLIC VERSION OF THE DASHBOARD**
 ```
 https://app.powerbi.com/view?r=eyJrIjoiYjIyMWJlYjUtNjJmNi00MDdmLTkwOTQtYjkwNDczYmNjMDMyIiwidCI6IjJhMDkyZDhmLTNjNDktNDkwMy05ZTA2LThhNjU4MzY1YWI1OCIsImMiOjZ9&embedImagePlaceholder=true
 ```
