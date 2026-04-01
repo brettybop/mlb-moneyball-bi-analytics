@@ -20,7 +20,7 @@ This project answers three layers of questions:
 
 ### Dashboard Link Below 👇
 
-[MLB Moneyball Dashboard Public Link](https://app.powerbi.com/view?r=eyJrIjoiYjIyMWJlYjUtNjJmNi00MDdmLTkwOTQtYjkwNDczYmNjMDMyIiwidCI6IjJhMDkyZDhmLTNjNDktNDkwMy05ZTA2LThhNjU4MzY1YWI1OCIsImMiOjZ9&embedImagePlaceholder=true)
+[MLB Moneyball Public Dashboard](https://app.powerbi.com/view?r=eyJrIjoiYjIyMWJlYjUtNjJmNi00MDdmLTkwOTQtYjkwNDczYmNjMDMyIiwidCI6IjJhMDkyZDhmLTNjNDktNDkwMy05ZTA2LThhNjU4MzY1YWI1OCIsImMiOjZ9&embedImagePlaceholder=true)
 
 ---
 
