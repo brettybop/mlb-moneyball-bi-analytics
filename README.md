@@ -336,7 +336,7 @@ mlb-moneyball-bi/
 
 This helps ensure each layer of the warehouse is populated and behaving as expected after a rebuild
 
-## Notes
+## 📝 Notes
 
 - v_value_hunters_pyteam is the more SQL-heavy value-hunter experiment.
 - v_value_hunters_base is the simplified Power BI-safe source used for the final report.
