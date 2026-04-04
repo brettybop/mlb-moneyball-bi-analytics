@@ -317,5 +317,27 @@ mlb-moneyball-bi/
 │  └─ (raw Lahman CSVs)
 └─ images/
    ├─ model_view_BI
-   └─ extras
+   ├─ page1_league_run_environment.png
+   ├─ page2_team_payroll_vs_wins.png
+   └─ page3_value_hunter.png
 ```
+
+## Validation & QA
+
+99__sanity_checks.sql to verify:
+
+- raw row counts
+- min/max season coverage
+- staging row counts
+- dimension and fact row counts
+- report-view samples
+- payroll coverage by season
+- value hunter candidate counts by year
+
+This helps ensure each layer of the warehouse is populated and behaving as expected after a rebuild
+
+## Notes
+
+- v_value_hunters_pyteam is the more SQL-heavy value-hunter experiment.
+- v_value_hunters_base is the simplified Power BI-safe source used for the final report.
+- Raw Lahman CSVs are intentionally not committed to the repo. 
