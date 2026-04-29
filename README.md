@@ -66,6 +66,8 @@ The raw CSVs are contained within the `/data` folder.
 
 ## 🧱 Data Modeling Overview
 
+![Model View Preview](./images/model_view_mlb_flagship.png)
+
 ### Schemas
 
 - **`raw_lahman`**  
