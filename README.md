@@ -6,6 +6,8 @@ Specifically we look at a bunch of baseball data from the Lahman Baseball Databa
 
 Baseball has been around a long time and there is a bunch of great data we can analyze. Let's dig in!
 
+![Dashboard Preview](images/mlb-flagship-dashboard.png)
+
 ## 🎯 Project Objective
 This project answers three layers of questions:
 
